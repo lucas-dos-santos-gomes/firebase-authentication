@@ -7,20 +7,65 @@
   <title>Login - Firebase</title>
 </head>
 <body>
-  <div class="responsivo">
-    <div id="entrar" class="entrar">
-      <h3 class="fw-bolder">Entrar</h3>
-      <div id="signin">
+  <div id="entrar" class="entrar">
+    <h3 class="fw-bolder">Entrar</h3>
+    <div id="signin">
+      <input
+        type="email"
+        id="emailEntrar"
+        placeholder="Informe email"
+        class="imput mb-3"
+      />
+      <input
+        type="password"
+        id="senhaEntrar"
+        placeholder="Informe senha"
+        class="imput mb-3"
+      />
+      <div
+        class="mt-1 gpButton"
+        role="group"
+        aria-label="Basic mixed styles example"
+      >
+        <input
+          type="button"
+          id="btnEntrar"
+          value="Entrar"
+          class="btn btn-primary"
+        />
+        <input
+          type="button"
+          id="btnGoogle"
+          value="Google"
+          class="btn btn-danger"
+        />
+      </div>
+      <p class="message">
+        Não está registrado? <a onclick="openPopup()" style="color: #036BFF;">Crie uma conta</a>
+      </p>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3 class="fw-bolder">Cadastrar</h3>
+      <div id="signup">
         <input
           type="email"
-          id="emailEntrar"
+          id="emailCad"
           placeholder="Informe email"
           class="imput mb-3"
         />
         <input
           type="password"
-          id="senhaEntrar"
+          id="senhaCad"
           placeholder="Informe senha"
+          class="imput mb-3"
+        />
+        <input
+          type="password"
+          id="senhaCad2"
+          placeholder="Confirme senha"
           class="imput mb-3"
         />
         <div
@@ -30,8 +75,8 @@
         >
           <input
             type="button"
-            id="btnEntrar"
-            value="Entrar"
+            id="btnCad"
+            value="Cadastrar"
             class="btn btn-primary"
           />
           <input
@@ -42,55 +87,8 @@
           />
         </div>
         <p class="message">
-          Não está registrado? <a onclick="openPopup()" style="color: #036BFF;">Crie uma conta</a>
+          Já está registrado? <a onclick="closePopup()" style="color: #036BFF;">Faça log-in</a>
         </p>
-      </div>
-    </div>
-
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <h3 class="fw-bolder">Cadastrar</h3>
-        <div id="signup">
-          <input
-            type="email"
-            id="emailCad"
-            placeholder="Informe email"
-            class="imput mb-3"
-          />
-          <input
-            type="password"
-            id="senhaCad"
-            placeholder="Informe senha"
-            class="imput mb-3"
-          />
-          <input
-            type="password"
-            id="senhaCad2"
-            placeholder="Confirme senha"
-            class="imput mb-3"
-          />
-          <div
-            class="mt-1 gpButton"
-            role="group"
-            aria-label="Basic mixed styles example"
-          >
-            <input
-              type="button"
-              id="btnCad"
-              value="Cadastrar"
-              class="btn btn-primary"
-            />
-            <input
-              type="button"
-              id="btnGoogle"
-              value="Google"
-              class="btn btn-danger"
-            />
-          </div>
-          <p class="message">
-            Já está registrado? <a onclick="closePopup()" style="color: #036BFF;">Faça log-in</a>
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -98,5 +96,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="src/scripts/config.js"></script>
+  <script src="src/scripts/auth.js"></script>
 </body>
 </html>
